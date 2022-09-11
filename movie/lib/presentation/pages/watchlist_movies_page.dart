@@ -62,6 +62,7 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
                 itemCount: state.movies.length,
               );
             } else if (state is WatchlistMovieErrorState) {
+              CrashlyticTracker.recordCrashEvent(state.message);
               return Center(
                 child: Text(state.message),
               );

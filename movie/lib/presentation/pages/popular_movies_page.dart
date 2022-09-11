@@ -51,6 +51,7 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
                 itemCount: state.movies.length,
               );
             } else if (state is MovieListErrorState) {
+              CrashlyticTracker.recordCrashEvent(state.message);
               return Center(
                 child: Text(state.message),
               );

@@ -35,6 +35,7 @@ void main() async {
   );
   di.init();
   AnalyticTracker.init();
+  CrashlyticTracker.init();
   await HttpSSLPinning.init();
   runApp(MyApp());
 }

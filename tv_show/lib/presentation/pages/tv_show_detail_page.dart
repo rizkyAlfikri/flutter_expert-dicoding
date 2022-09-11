@@ -64,6 +64,7 @@ class TvShowDetailContent extends StatelessWidget {
   }) : super(key: key);
 
   void showErrorMessage(BuildContext context, String errorMessage) {
+    CrashlyticTracker.recordCrashEvent(errorMessage);
     final message = errorMessage;
     if (message == TvShowDetailWatchlistBloc.watchlistAddSuccessMessage ||
         message == TvShowDetailWatchlistBloc.watchlistRemoveSuccessMessage) {
@@ -132,11 +133,17 @@ class TvShowDetailContent extends StatelessWidget {
                                   return ElevatedButton(
                                     onPressed: () async {
                                       if (!state.isAdded) {
+                                        AnalyticTracker
+                                            .sendTvFavoriteAnalyticsEvent(
+                                                tvShowDetail, true);
                                         context
                                             .read<TvShowDetailWatchlistBloc>()
                                             .add(OnAddTvShowWatchlistEvent(
                                                 tvShowDetail));
                                       } else {
+                                        AnalyticTracker
+                                            .sendTvFavoriteAnalyticsEvent(
+                                                tvShowDetail, false);
                                         context
                                             .read<TvShowDetailWatchlistBloc>()
                                             .add(

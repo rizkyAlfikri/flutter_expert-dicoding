@@ -48,6 +48,7 @@ class _PopularTvShowPageState extends State<PopularTvShowPage> {
                 itemCount: state.tvShows.length,
               );
             } else if (state is TvShowListErrorState) {
+              CrashlyticTracker.recordCrashEvent(state.message);
               return Text(state.message);
             } else {
               return const Center(

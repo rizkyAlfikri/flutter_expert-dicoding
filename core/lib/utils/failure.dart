@@ -1,12 +1,9 @@
 import 'package:equatable/equatable.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 abstract class Failure extends Equatable {
   final String message;
 
-  Failure(this.message) {
-    FirebaseCrashlytics.instance.crash();
-  }
+  Failure(this.message);
 
   @override
   List<Object> get props => [message];

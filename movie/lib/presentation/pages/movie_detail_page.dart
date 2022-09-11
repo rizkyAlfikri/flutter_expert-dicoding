@@ -64,6 +64,7 @@ class MovieDetailContent extends StatelessWidget {
       : super(key: key);
 
   void showErrorMessage(BuildContext context, String errorMessage) {
+    CrashlyticTracker.recordCrashEvent(errorMessage);
     final message = errorMessage;
     if (message == MovieDetailWatchlistBloc.watchlistAddSuccessMessage ||
         message == MovieDetailWatchlistBloc.watchlistRemoveSuccessMessage) {
@@ -132,11 +133,17 @@ class MovieDetailContent extends StatelessWidget {
                                   return ElevatedButton(
                                     onPressed: () async {
                                       if (!state.isAdded) {
+                                        AnalyticTracker
+                                            .sendMovieFavoriteAnalyticsEvent(
+                                                movie, true);
                                         context
                                             .read<MovieDetailWatchlistBloc>()
                                             .add(OnAddMovieWatchlistEvent(
                                                 movie));
                                       } else {
+                                        AnalyticTracker
+                                            .sendMovieFavoriteAnalyticsEvent(
+                                                movie, false);
                                         context
                                             .read<MovieDetailWatchlistBloc>()
                                             .add(

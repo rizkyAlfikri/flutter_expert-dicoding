@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:core/core.dart';
 import 'package:core/data/models/genre_model.dart';
 import 'package:core/data/models/movie_detail_model.dart';
 import 'package:core/data/models/movie_model.dart';

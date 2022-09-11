@@ -47,6 +47,7 @@ class _TopRatedTvShowPageState extends State<TopRatedTvShowPage> {
                 itemCount: state.tvShows.length,
               );
             } else if (state is TvShowListErrorState) {
+              CrashlyticTracker.recordCrashEvent(state.message);
               return Text(state.message);
             } else {
               return const Center(

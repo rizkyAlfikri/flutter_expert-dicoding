@@ -66,6 +66,7 @@ class HomeTvShowPageState extends State<HomeTvShowPage> {
                     route: TvShowDetailPage.ROUTE_NAME,
                   );
                 } else if (state is TvShowListErrorState) {
+                  CrashlyticTracker.recordCrashEvent(state.message);
                   return Text(state.message);
                 } else {
                   return const Text('Failed');
@@ -89,6 +90,7 @@ class HomeTvShowPageState extends State<HomeTvShowPage> {
                     route: TvShowDetailPage.ROUTE_NAME,
                   );
                 } else if (state is TvShowListErrorState) {
+                  CrashlyticTracker.recordCrashEvent(state.message);
                   return Text(state.message);
                 } else {
                   return const Text('Failed');
@@ -112,6 +114,7 @@ class HomeTvShowPageState extends State<HomeTvShowPage> {
                     route: TvShowDetailPage.ROUTE_NAME,
                   );
                 } else if (state is TvShowListErrorState) {
+                  CrashlyticTracker.recordCrashEvent(state.message);
                   return Text(state.message);
                 } else {
                   return const Text('Failed');

@@ -72,7 +72,6 @@ class TvShowDetailWatchlistBloc
       result.fold((error) {
         emit(TvShowWatchlistStatusState(isAdded, error.message));
       }, (data) {
-        AnalyticTracker.sendTvFavoriteAnalyticsEvent(tvShowDetail, true);
         emit(TvShowWatchlistStatusState(isAdded, data));
       });
     });
@@ -87,7 +86,6 @@ class TvShowDetailWatchlistBloc
       result.fold((error) {
         emit(TvShowWatchlistStatusState(isAdded, error.message));
       }, (data) {
-        AnalyticTracker.sendTvFavoriteAnalyticsEvent(tvShowDetail, true);
         emit(TvShowWatchlistStatusState(isAdded, data));
       });
     });

@@ -116,6 +116,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                     route: MovieDetailPage.ROUTE_NAME,
                   );
                 } else if (state is MovieListErrorState) {
+                  CrashlyticTracker.recordCrashEvent(state.message);
                   return Text(state.message);
                 } else {
                   return const Text('Failed');
@@ -139,6 +140,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                     route: MovieDetailPage.ROUTE_NAME,
                   );
                 } else if (state is MovieListErrorState) {
+                  CrashlyticTracker.recordCrashEvent(state.message);
                   return Text(state.message);
                 } else {
                   return const Text('Failed');
@@ -162,6 +164,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                     route: MovieDetailPage.ROUTE_NAME,
                   );
                 } else if (state is MovieListErrorState) {
+                  CrashlyticTracker.recordCrashEvent(state.message);
                   return Text(state.message);
                 } else {
                   return const Text('Failed');

@@ -74,6 +74,7 @@ class MovieDetailWatchlistBloc
       result.fold((error) {
         emit(MovieWatchlistStatusState(isAdded, error.message));
       }, (data) {
+        AnalyticTracker.sendMovieFavoriteAnalyticsEvent(movieDetail, true);
         emit(MovieWatchlistStatusState(isAdded, data));
       });
     });
@@ -88,6 +89,7 @@ class MovieDetailWatchlistBloc
       result.fold((error) {
         emit(MovieWatchlistStatusState(isAdded, error.message));
       }, (data) {
+        AnalyticTracker.sendMovieFavoriteAnalyticsEvent(movieDetail, false);
         emit(MovieWatchlistStatusState(isAdded, data));
       });
     });

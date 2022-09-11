@@ -13,6 +13,7 @@ export 'presentation/widgets/item_list.dart';
 export 'presentation/widgets/sub_heading.dart';
 export 'styles/colors.dart';
 export 'styles/text_styles.dart';
+export 'utils/analytic_tracker.dart';
 export 'utils/constants.dart';
 export 'utils/exception.dart';
 export 'utils/failure.dart';

@@ -174,9 +174,13 @@ class TvShowDetailContent extends StatelessWidget {
                             Text(
                               _showGenres(tvShowDetail.genres),
                             ),
-                            Text(
-                              _showDuration(tvShowDetail.episodeRunTime.first),
-                            ),
+                            if (tvShowDetail.episodeRunTime.isNotEmpty)
+                              Text(
+                                (tvShowDetail.episodeRunTime.isNotEmpty)
+                                    ? _showDuration(
+                                        tvShowDetail.episodeRunTime.first)
+                                    : "-",
+                              ),
                             Row(
                               children: [
                                 RatingBarIndicator(

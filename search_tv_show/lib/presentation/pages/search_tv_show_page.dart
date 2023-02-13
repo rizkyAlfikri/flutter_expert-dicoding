@@ -1,7 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 import 'package:search_tv_show/presentation/bloc/tv_show_search_bloc.dart';
 
 class SearchTvShowPage extends StatelessWidget {
